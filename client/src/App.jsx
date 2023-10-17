@@ -7,8 +7,7 @@ const App = () =>  {
    
   return (
     <div className="min-h-screen gradient-bg-welcome">
-      <div className=" text-white pt-6 pl-6 text-3xl font-mono text-center">
-        Memories
+      <div >
         <Navbar />
       </div>
     </div>
