@@ -1,5 +1,5 @@
 import express from 'express'
-import {getPosts} from '../controllers/posts.js'
+import {getPosts} from '../controllers/posts.js' //remember to add .js - in react we dont need. in express we need
 
 const router = express.Router();
 
