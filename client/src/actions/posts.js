@@ -7,7 +7,8 @@ export const getPosts = () => async (dispatch) => {
   try {
     const { data } = await api.fetchPosts();
     
-
+    //with redux thunk instead of returning the action you have to dispatch the action
+    //we can use dispatch because we implemented const dispatch = useDispatch() in app.jsx
     dispatch({ type: FETCH_ALL, payload: data });
   } catch (error) {
     console.log(error);
