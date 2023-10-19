@@ -1,6 +1,7 @@
 import React from 'react'
 import Post from './Post/Post'
 import {useSelector} from 'react-redux' //fetch the data from the global redux store
+import  Loader  from "../Loader";
 
 const Posts = () => {
 
@@ -8,12 +9,17 @@ const Posts = () => {
   console.log(posts) //check in browser to see that empty posts is printed []
 
   return (
+
+    !posts.length? <Loader /> : (
     <div>
-      <h1> POSTS </h1>
-      <Post />
-      <Post />
-    
-    </div>
+      <div className="mt-10 grid grid-cols-2 gap-1 w-full">
+      {posts.map((post)=>(
+        <div key={post._id} className="grid w-full">
+          <Post post={post}/>
+        </div>
+      ))}
+      </div>
+    </div>)
   )
 }
 
