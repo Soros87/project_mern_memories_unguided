@@ -4,6 +4,8 @@ import React, {useState,useEffect} from 'react'
 import { useDispatch } from 'react-redux';
 import {createPost,getPosts} from '../../actions/posts'
 
+//GET THE CURRENT ID OF THE POST
+
 
 const Form = () => {
 
@@ -17,9 +19,9 @@ const [postData,setPostData] =useState({
 
 const dispatch = useDispatch()
 
-useEffect(() => {
-  dispatch(getPosts())
-}, [dispatch])
+  useEffect(() => {
+    dispatch(getPosts())
+  }, [dispatch])
 
 const handleSubmit = async (e) => {
   e.preventDefault(); //event - not to get the refresh in the browser
