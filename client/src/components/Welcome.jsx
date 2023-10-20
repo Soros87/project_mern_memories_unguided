@@ -8,7 +8,7 @@ const Welcome = () => {
   
   return (
     <div className="flex w-full justify-center items-center mt-3 2xl:px-20 text-white">
-       <div className="flex flex-col md:p-12 py-4 px-4">
+       <div className="flex flex-col-2 md:p-12 py-4 px-4 gap-10">
        <Form />
        <Posts />
       </div>
