@@ -37,11 +37,11 @@ const handleSubmit = async (e) => {
   e.preventDefault(); //event - not to get the refresh in the browser
   
   if (currentId===0) {
-    dispatch(updatePost(currentId,postData))
+    dispatch(createPost(postData))
     clear()
 
   } else { 
-    dispatch(createPost(postData))
+    dispatch(updatePost(currentId,postData))
     clear()
     
   }
