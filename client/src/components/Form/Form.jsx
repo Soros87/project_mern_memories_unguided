@@ -52,7 +52,7 @@ const clear = () => {}
     <div className="flex flex-col flex-1 items-start justify-center w-full mf:mt-0 mt-10 border border-gray-300 rounded-lg bg-blue">
       <div className="p-5 sm:w-96 w-full flex-col justify-start items-center ">
         <form autoComplete="off" onSubmit={handleSubmit} >
-          <div className="text-white pb-2 font-mono text-2xl">Post it!</div>
+          <div className="text-white pb-2 font-mono text-2xl">{currentId ? `Edit ${post.title}!` : 'Post it!'}</div>
             <input placeholder="creator" value={postData.creator} name="creator" type="text" onChange={(e) => setPostData({ ...postData, creator: e.target.value })} className="my-2 w-full flex-initial p-3 outline-none bg-gray-50 text-black border-none text-sm white-glassmorphism rounded-lg font-mono" />
             <input placeholder="title" value={postData.title} name="title" type="text" onChange={(e) => setPostData({ ...postData, title: e.target.value })} className="my-2 w-full flex-initial p-3 outline-none bg-gray-50 text-black border-none text-sm white-glassmorphism rounded-lg font-mono" />
             <input placeholder="message" value={postData.message} name="message" type="text" onChange={(e) => setPostData({ ...postData, message: e.target.value })} className="my-2 w-full flex-initial p-3 outline-none bg-gray-50 text-black border-none text-sm white-glassmorphism rounded-lg font-mono" />
