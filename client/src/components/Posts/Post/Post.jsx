@@ -4,7 +4,7 @@ import {RiDeleteBinLine } from "react-icons/ri";
 import {FiMoreHorizontal } from "react-icons/fi";
 import moment from 'moment'
 
-const Post = ({post}) => {
+const Post = ({post,setCurrentId}) => {
   return (
     <div className="relative max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div className="flex justify-between mb-3 absolute top-0 left-0 pl-3">
@@ -19,7 +19,7 @@ const Post = ({post}) => {
           </p>
           </div>
         </div>
-      <button className="absolute bottom-0 right-0 text-black bg-white p-2 rounded  hover:bg-[#2952e3] hover:text-white m-2">
+      <button className="absolute bottom-0 right-0 text-black bg-white p-2 rounded  hover:bg-[#2952e3] hover:text-white m-2" onClick={() =>(setCurrentId(post._id))}>
         <FiMoreHorizontal/>
         </button>
       <img className="rounded-t-lg" src={post.selectedFile} title={post.title}/>
