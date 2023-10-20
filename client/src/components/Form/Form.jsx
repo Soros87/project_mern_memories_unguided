@@ -1,7 +1,7 @@
 
 import FileBase from 'react-file-base64';
 import React, {useState,useEffect} from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import {createPost,getPosts,updatePost} from '../../actions/posts'
 
 //GET THE CURRENT ID OF THE POST
@@ -17,11 +17,21 @@ const [postData,setPostData] =useState({
     selectedFile:''
   })
 
+//only find the post that has the same id as our currentId
+const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null)) //post comes from redux store
+
+
 const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(getPosts())
-  }, [dispatch])
+useEffect(() => {
+  dispatch(getPosts())
+}, [dispatch])
+
+//update the Form based on the id
+//useEffect -> (callback func/action based on changes in dependency data, post)
+useEffect(() => {
+  if (post) setPostData(post);
+}, [post]);
 
 const handleSubmit = async (e) => {
   e.preventDefault(); //event - not to get the refresh in the browser

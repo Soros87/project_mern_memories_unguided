@@ -1,4 +1,5 @@
 import PostMessage from '../models/postMessage.js'
+import mongoose from 'mongoose';
 
 //controller is to apply the logic of the req,res
 
