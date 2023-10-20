@@ -2,12 +2,12 @@
 import FileBase from 'react-file-base64';
 import React, {useState,useEffect} from 'react'
 import { useDispatch } from 'react-redux';
-import {createPost,getPosts} from '../../actions/posts'
+import {createPost,getPosts,updatePost} from '../../actions/posts'
 
 //GET THE CURRENT ID OF THE POST
 
 
-const Form = () => {
+const Form = ({currentId,setCurrentId}) => {
 
 const [postData,setPostData] =useState({
     creator:'',
@@ -25,7 +25,15 @@ const dispatch = useDispatch()
 
 const handleSubmit = async (e) => {
   e.preventDefault(); //event - not to get the refresh in the browser
-  dispatch(createPost(postData))
+  
+  if (currentId) {
+    dispatch(updatePost(currentId,postData))
+  } else { 
+    dispatch(createPost(postData)) 
+  }
+
+
+
 }
 const clear = () => {}
 
