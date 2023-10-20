@@ -25,7 +25,7 @@ const dispatch = useDispatch()
 
 useEffect(() => {
   dispatch(getPosts())
-}, [dispatch])
+}, [currentId, dispatch]) //add the currentId so that you dont need to refresh the page
 
 //update the Form based on the id
 //useEffect -> (callback func/action based on changes in dependency data, post)
@@ -36,16 +36,23 @@ useEffect(() => {
 const handleSubmit = async (e) => {
   e.preventDefault(); //event - not to get the refresh in the browser
   
-  if (currentId) {
+  if (currentId===0) {
     dispatch(updatePost(currentId,postData))
+    clear()
+
   } else { 
-    dispatch(createPost(postData)) 
+    dispatch(createPost(postData))
+    clear()
+    
   }
 
-
+  
 
 }
-const clear = () => {}
+const clear = () => {
+  setCurrentId(0);
+  setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' })
+};
 
 
   return (
