@@ -12,7 +12,7 @@ const Posts = ({setCurrentId}) => {
 
     !posts.length? <Loader /> : (
     <div>
-      <div className="mt-10 grid grid-cols-2 gap-20 w-full">
+      <div className="mt-10 grid grid-cols-2 gap-10 w-full">
       {posts.map((post)=>(
         <div key={post._id} className="grid w-full">
           <Post post={post} setCurrentId={setCurrentId}/>
