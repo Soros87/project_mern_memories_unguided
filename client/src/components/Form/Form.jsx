@@ -56,7 +56,7 @@ const clear = () => {
 
 
   return (
-    <div className="flex flex-col flex-1 items-start justify-center w-full mf:mt-0 mt-10 border border-gray-300 rounded-lg bg-blue">
+    <div className="flex flex-col flex-1 items-start justify-center h-[20%] w-full mf:mt-0 mt-10 border border-gray-300 rounded-lg bg-blue">
       <div className="p-5 sm:w-96 w-full flex-col justify-start items-center ">
         <form autoComplete="off" onSubmit={handleSubmit} >
           <div className="text-white pb-2 font-mono text-2xl">{currentId ? `Edit ${post.title}!` : 'Post it!'}</div>
