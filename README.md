@@ -14,3 +14,8 @@ npm start - server folder
 CREATE THE SKELETON
 5. create main.jsx file in server
 6. create component folder in client
+
+
+IMPROVEMENTS PENDING
+1. edit mobile responsiveness css style
+2. add login functionality

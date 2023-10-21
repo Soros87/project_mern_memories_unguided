@@ -9,11 +9,11 @@ const App = () =>  {
 
 
   return (
-    <div className="min-h-screen gradient-bg-welcome">
-      <div >
+    <div className="min-h-screen min-w-full gradient-bg-welcome">
+
         <Navbar />
         <Welcome />
-      </div>
+
     </div>
   )
 }
