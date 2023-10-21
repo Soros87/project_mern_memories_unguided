@@ -5,7 +5,7 @@ import {FiMoreHorizontal } from "react-icons/fi";
 import moment from 'moment'
 
 import { useDispatch } from 'react-redux';
-import { deletePost } from '../../../actions/posts';
+import { deletePost,likePost } from '../../../actions/posts';
 
 
 const Post = ({post,setCurrentId}) => {
@@ -43,7 +43,7 @@ const Post = ({post,setCurrentId}) => {
         </h3>
 
         <div className="p-5">
-        <button className="absolute bottom-0 left-0 text-black bg-white p-2 rounded  hover:bg-[#2952e3] hover:text-white m-22" onClick={()=>(any)}>
+        <button className="absolute bottom-0 left-0 text-black bg-white p-2 rounded  hover:bg-[#2952e3] hover:text-white m-22" onClick={()=>(dispatch(likePost(post._id)))}>
           <FiThumbsUp/>Like {post.likeCount}
         </button>
         <button className="absolute bottom-0 left-20 text-black bg-white p-2 rounded  hover:bg-[#2952e3] hover:text-white m-22 font font-normal" onClick={()=>(dispatch(deletePost(post._id)))} >
